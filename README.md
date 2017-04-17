@@ -1,31 +1,42 @@
-# Ecomapp
+# Go-Back-N ARQ Implementation
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.
+This project was developed by below team members:
+Saranya Chithalandur Rajedran
+Keerthana Mahalingam
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Live demo
+http://saracr.com/gobackn
 
-## Code scaffolding
+## Environment
+Platform: windows 7, Mac, Google Chrome
+Language: Java script, JQuery, HTML, CSS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## Steps to run the simulator
+1. Clone the project 
+2. The clone project will contain below three files
+	 start.html
+	 app.js
+	 app.css
 
-## Build
+3. Open the start.html file in a browser (Tested only on Chrome latest update). Please maximize the browser to full window, it may not work correctly in small window.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+4. The page will appear with default properties such as "Number of frames, Window size, Timeout(s), Speed". Please feel to change the values of them and the values must be in numeric.
 
-## Running unit tests
+5. The simulation area, the sender's "ready frames" will appear in the top and receiver's "expected frame" slots will appear in the bottom of the simulation area.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+6. Sliding window is marked in red color and it covers the frames those are ready to get transmitted from sender.
 
-## Running end-to-end tests
+7. Some of the quick simulation controls are specified below:
+	- Perform a mouse click on required "ready info frame"  (frame 0, frame1,....frameN) on sender side to issue damaged "Info Frames"
+	- To damage or kill a moving frame or ACK, feel free to click on it. This will make frame to be lost/damaged.
+	- Click on "Stop" button any time to completely stop the simulation and get page refreshed.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+8. Click on green color "Start" button to start the simulation. This will start generating RR ACK if the below steps are not performed yet.
 
-## Deploying to GitHub Pages
+9. REJ ACK Simulation: In order to simulate damaged info frame, please click on the frame on the sender side before it gets transmitted. As soon as you click on the sender side frame, it will appear in black color and it will send damaged from to receiver.
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+10. ACK Poll/Final Command Simulation: The ACK Poll frame is issued by sender when RR ACK is not received in a specified time. In order to simulate this case, either click on the moving info frame or RR frame to kill. Then, please wait for specified timeout time to see ACK Poll get issued from sender and wait to see the ACK Final from receiver.
 
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Assumption:
+1. We do not display running timer on screen, however, the timer is running on the specified interval and keeps polling until RR ACK is received for a frame sequence. So, please wait until the timer expires to send the poll request.
+2. We assumed that killing a ACK is similar as damaging it.
