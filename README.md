@@ -1,15 +1,15 @@
 # Go-Back-N ARQ Implementation
 
 ### This project was developed by below team members:
-Saranya Chithalandur Rajedran
-Keerthana Mahalingam
+#### Saranya Chithalandur Rajedran
+#### Keerthana Mahalingam
 
 ## Live demo
 http://saracr.com/gobackn
 
 ## Environment
-### Platform: windows 7, Mac, Google Chrome
-### Language: Java script, JQuery, HTML, CSS
+#### Platform: windows 7, Mac, Google Chrome
+#### Language: Java script, JQuery, HTML, CSS
 
 ## Steps to run the simulator
 1. Clone the project 
